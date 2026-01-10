@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ronak Savani - DevOps Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: #000000;
+            color: #e0e0e0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Animated Background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, #000000 0%, #0a0e27 50%, #000000 100%);
+        }
+
+        .grid-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+            animation: gridMove 20s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        /* Floating particles */
+        .particle {
+            position: fixed;
+            width: 3px;
+            height: 3px;
+            background: rgba(0, 255, 255, 0.6);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+        }
+
+        /* NEW: Tech Arsenal Logo Container */
+        .tech-arsenal-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 40px 0 20px;
+            perspective: 1000px;
+        }
+
+        .logo-container {
+            position: relative;
+            width: 300px;
+            height: 120px;
+        }
+
+        .logo-circle {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 255, 255, 0.1) 0%, rgba(0, 255, 255, 0) 70%);
+            border: 2px solid rgba(0, 255, 255, 0.5);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.3),
+                        inset 0 0 30px rgba(0, 255, 255, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: rotateLogo 20s linear infinite;
+        }
+
+        @keyframes rotateLogo {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .logo-inner {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 255, 136, 0.2) 0%, rgba(0, 255, 136, 0) 70%);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: pulseInner 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulseInner {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
+        .logo-icon {
+            font-size: 30px;
+            color: #00ffff;
+            filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.7));
+        }
+
+        .logo-text {
+            position: absolute;
+            right: 0;
+            width: 180px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .logo-main-text {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2em;
+            background: linear-gradient(45deg, #00ffff, #00ff88);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .logo-sub-text {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9em;
+            color: #00ff88;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .logo-connector {
+            position: absolute;
+            left: 120px;
+            top: 50%;
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, rgba(0, 255, 255, 0.8), rgba(0, 255, 136, 0.8));
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+
+        .logo-glow {
+            position: absolute;
+            width: 300px;
+            height: 120px;
+            background: radial-gradient(ellipse at center, rgba(0, 255, 255, 0.1) 0%, transparent 70%);
+            z-index: -1;
+            animation: glowPulse 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes glowPulse {
+            0% { opacity: 0.3; }
+            100% { opacity: 0.7; }
+        }
+
+        /* Header Section */
+        header {
+            padding: 100px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1a3e 50%, #0a0e27 100%);
+            border-bottom: 2px solid rgba(0, 255, 255, 0.3);
+        }
+
+        .tech-icons-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.08;
+            overflow: hidden;
+        }
+
+        .floating-icon {
+            position: absolute;
+            font-size: 60px;
+            color: #00ffff;
+            animation: float 15s infinite ease-in-out;
+        }
+
+        .floating-icon:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+        .floating-icon:nth-child(2) { top: 20%; right: 15%; animation-delay: 2s; }
+        .floating-icon:nth-child(3) { top: 60%; left: 20%; animation-delay: 4s; }
+        .floating-icon:nth-child(4) { top: 70%; right: 10%; animation-delay: 6s; }
+        .floating-icon:nth-child(5) { top: 40%; left: 50%; animation-delay: 8s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        .glitch {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 4em;
+            font-weight: 900;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #00ffff, #00ff88, #00ffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            z-index: 2;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            animation: glitchAnimation 3s infinite;
+        }
+
+        @keyframes glitchAnimation {
+            0%, 90%, 100% { transform: translate(0); }
+            92% { transform: translate(-2px, 2px); }
+            94% { transform: translate(2px, -2px); }
+            96% { transform: translate(-2px, -2px); }
+            98% { transform: translate(2px, 2px); }
+        }
+
+        .cyber-tagline {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5em;
+            color: #00ffff;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            letter-spacing: 2px;
+        }
+
+        .cyber-tagline::before,
+        .cyber-tagline::after {
+            content: '//';
+            color: #00ff88;
+            margin: 0 10px;
+        }
+
+        .contact-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-btn {
+            position: relative;
+            padding: 12px 30px;
+            background: rgba(0, 255, 255, 0.1);
+            border: 2px solid #00ffff;
+            color: #00ffff;
+            text-decoration: none;
+            font-size: 1em;
+            font-weight: 600;
+            transition: all 0.3s;
+            clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-btn:hover {
+            background: rgba(0, 255, 255, 0.2);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5), inset 0 0 20px rgba(0, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .contact-btn i {
+            margin-right: 8px;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            text-align: center;
+            color: #00ffff;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
+            text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #00ffff, transparent);
+            margin: 20px auto 0;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+        }
+
+        /* Summary Box */
+        .cyber-box {
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.05) 0%, rgba(0, 255, 136, 0.05) 100%);
+            padding: 40px;
+            border: 2px solid rgba(0, 255, 255, 0.3);
+            position: relative;
+            font-size: 1.2em;
+            line-height: 1.9;
+            clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
+        }
+
+        .cyber-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00ffff, transparent);
+            animation: scanline 3s linear infinite;
+        }
+
+        @keyframes scanline {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* Tech Stack Grid - ENHANCED */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .tech-card {
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.05) 0%, rgba(10, 14, 39, 0.8) 100%);
+            padding: 25px;
+            text-align: center;
+            border: 2px solid rgba(0, 255, 255, 0.2);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+        }
+
+        .tech-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.5s;
+        }
+
+        .tech-card:hover {
+            border-color: #00ffff;
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3);
+        }
+
+        .tech-card:hover::before {
+            left: 100%;
+        }
+
+        .tech-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            color: #00ffff;
+            filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.7));
+        }
+
+        .tech-name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.1em;
+            color: #00ff88;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* NEW: Tech Level Indicator */
+        .tech-level {
+            height: 4px;
+            background: rgba(0, 255, 255, 0.1);
+            margin-top: 15px;
+            border-radius: 2px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .tech-level-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #00ffff, #00ff88);
+            border-radius: 2px;
+            width: 0;
+            transition: width 1s ease-out;
+        }
+
+        /* Experience Cards */
+        .experience-grid {
+            display: grid;
+            gap: 30px;
+        }
+
+        .exp-card {
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.05) 0%, rgba(10, 14, 39, 0.8) 100%);
+            padding: 35px;
+            border-left: 4px solid #00ffff;
+            border-right: 2px solid rgba(0, 255, 255, 0.2);
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .exp-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: #00ff88;
+            transition: height 0.5s;
+        }
+
+        .exp-card:hover::before {
+            height: 100%;
+        }
+
+        .exp-card:hover {
+            transform: translateX(10px);
+            box-shadow: -5px 0 20px rgba(0, 255, 255, 0.2);
+        }
+
+        .job-header {
+            margin-bottom: 20px;
+        }
+
+        .job-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5em;
+            color: #00ffff;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .company-info {
+            font-size: 1.1em;
+            color: #00ff88;
+            margin-bottom: 5px;
+        }
+
+        .duration {
+            color: #888;
+            font-size: 0.95em;
+            font-style: italic;
+        }
+
+        .job-description {
+            margin-top: 20px;
+            list-style: none;
+        }
+
+        .job-description li {
+            padding-left: 25px;
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        .job-description li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: #00ffff;
+            font-size: 1.5em;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-box {
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.08) 0%, rgba(10, 14, 39, 0.9) 100%);
+            padding: 30px;
+            border: 2px solid rgba(0, 255, 255, 0.3);
+            position: relative;
+            clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
+        }
+
+        .skill-box h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: #00ffff;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+            color: #e0e0e0;
+            transition: all 0.3s;
+        }
+
+        .skill-list li:hover {
+            color: #00ffff;
+            padding-left: 10px;
+            border-bottom-color: #00ffff;
+        }
+
+        /* Certifications */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .cert-card {
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.1) 0%, rgba(10, 14, 39, 0.9) 100%);
+            padding: 40px;
+            border: 2px solid #00ffff;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s;
+            clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
+        }
+
+        .cert-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .cert-card:hover::before {
+            opacity: 1;
+        }
+
+        .cert-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
+        }
+
+        .cert-icon {
+            font-size: 3em;
+            color: #00ffff;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.7));
+        }
+
+        .cert-name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3em;
+            color: #00ffff;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .cert-details {
+            color: #00ff88;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        .cert-issuer {
+            color: #888;
+            font-size: 0.95em;
+            font-style: italic;
+        }
+
+        /* Education Section */
+        .edu-grid {
+            display: grid;
+            gap: 30px;
+        }
+
+        .edu-card {
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.05) 0%, rgba(10, 14, 39, 0.8) 100%);
+            padding: 35px;
+            border-left: 4px solid #00ff88;
+            border-right: 2px solid rgba(0, 255, 136, 0.2);
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .edu-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: #00ffff;
+            transition: height 0.5s;
+        }
+
+        .edu-card:hover::before {
+            height: 100%;
+        }
+
+        .edu-card:hover {
+            transform: translateX(10px);
+            box-shadow: -5px 0 20px rgba(0, 255, 136, 0.2);
+        }
+
+        .edu-header {
+            margin-bottom: 20px;
+        }
+
+        .edu-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5em;
+            color: #00ff88;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .edu-institution {
+            font-size: 1.2em;
+            color: #00ffff;
+            margin-bottom: 5px;
+        }
+
+        .edu-duration {
+            color: #888;
+            font-size: 0.95em;
+            font-style: italic;
+        }
+
+        .edu-cgpa {
+            color: #00ff88;
+            font-size: 1.1em;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background: #000000;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 80px;
+            border-top: 2px solid rgba(0, 255, 255, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-text {
+            font-family: 'Orbitron', sans-serif;
+            color: #00ffff;
+            margin: 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .footer-subtext {
+            color: #00ff88;
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+
+        .footer-status {
+            color: #00ff88;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+        }
+
+        /* NEW: Hacker Terminal Effect */
+        .terminal-effect {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background: rgba(0, 0, 0, 0.9);
+            border-top: 2px solid #00ff88;
+            z-index: 100;
+            overflow: hidden;
+            display: none;
+        }
+
+        .terminal-text {
+            font-family: 'Courier New', monospace;
+            color: #00ff88;
+            padding: 10px;
+            font-size: 14px;
+            white-space: nowrap;
+            animation: terminalTyping 20s linear infinite;
+        }
+
+        @keyframes terminalTyping {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* NEW: Scroll Progress Indicator */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, #00ffff, #00ff88);
+            z-index: 1000;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .glitch {
+                font-size: 2.5em;
+            }
+
+            .cyber-tagline {
+                font-size: 1.1em;
+            }
+
+            .section-title {
+                font-size: 2em;
+            }
+
+            .contact-grid {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .tech-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            }
+
+            .logo-container {
+                width: 250px;
+                height: 100px;
+            }
+
+            .logo-circle {
+                width: 100px;
+                height: 100px;
+            }
+
+            .logo-inner {
+                width: 60px;
+                height: 60px;
+            }
+
+            .logo-main-text {
+                font-size: 1.8em;
+            }
+
+            .logo-sub-text {
+                font-size: 0.8em;
+                letter-spacing: 3px;
+            }
+
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #000000;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #00ffff, #00ff88);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00ffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="animated-bg"></div>
+    <div class="grid-overlay"></div>
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <header>
+        <div class="tech-icons-bg">
+            <i class="fab fa-docker floating-icon"></i>
+            <i class="fab fa-aws floating-icon"></i>
+            <i class="fab fa-git-alt floating-icon"></i>
+            <i class="fab fa-jenkins floating-icon"></i>
+            <i class="fas fa-dharmachakra floating-icon"></i>
+        </div>
+        <div class="container">
+            <h1 class="glitch">Ronak Savani</h1>
+            <p class="cyber-tagline">DevOps Engineer | Cloud Infrastructure | CI/CD Automation</p>
+            <div class="contact-grid">
+                <a href="mailto:savanironak1515@gmail.com" class="contact-btn">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+                <a href="tel:+919016945430" class="contact-btn">
+                    <i class="fas fa-phone"></i> Phone
+                </a>
+                <a href="https://linkedin.com/in/ronak-savani-305517210" target="_blank" class="contact-btn">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://github.com/ronak-savani" target="_blank" class="contact-btn">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">System.Initialize()</h2>
+            <div class="cyber-box">
+                Results-driven DevOps Engineer with expertise in cloud infrastructure, containerization, and CI/CD automation. Proficient in AWS, Kubernetes, Docker, and Terraform for building scalable and reliable deployment pipelines.
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">Tech Arsenal</h2>
+            
+            <!-- NEW: Tech Arsenal Logo -->
+            <div class="tech-arsenal-logo">
+                <div class="logo-container">
+                    <div class="logo-glow"></div>
+                    <div class="logo-circle">
+                        <div class="logo-inner">
+                            <i class="fas fa-cogs logo-icon"></i>
+                        </div>
+                    </div>
+                    <div class="logo-connector"></div>
+                    <div class="logo-text">
+                        <div class="logo-main-text">TECH</div>
+                        <div class="logo-sub-text">ARSENAL</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tech-grid">
+                <!-- Only showing the specific 8 tech cards as requested -->
+                <div class="tech-card">
+                    <i class="fab fa-docker tech-icon"></i>
+                    <div class="tech-name">docker</div>
+                    <div class="tech-level"><div class="tech-level-bar" data-level="95"></div></div>
+                </div>
+                <div class="tech-card">
+                    <i class="fas fa-dharmachakra tech-icon"></i>
+                    <div class="tech-name">kubernetes</div>
+                    <div class="tech-level"><div class="tech-level-bar" data-level="90"></div></div>
+                </div>
+                <div class="tech-card">
+                    <i class="fas fa-cube tech-icon"></i>
+                    <div class="tech-name">terraform</div>
+                    <div class="tech-level"><div class="tech-level-bar" data-level="85"></div></div>
+                </div>
+                <div class="tech-card">
+                    <i class="fab fa-aws tech-icon"></i>
+                    <div class="tech-name">aws</div>
+                    <div class="tech-level"><div class="tech-level-bar" data-level="92"></div></div>
+                </div>
+                <div class="tech-card">
+                    <i class="fab fa-jenkins tech-icon"></i>
+                    <div class="tech-name">jenkins</div>
+                    <div class="tech-level"><div class="tech-level-bar" data-level="88"></div></div>
+                </div>
+                <div class="tech-card">
+                    <i class="fab fa-microsoft tech-icon"></i>
+                    <div class="tech-name">azure</div>
+                    <div class="tech-level"><div class="tech-level-bar" data-level="80"></div></div>
+                </div>
+                <div class="tech-card">
+                    <i class="fas fa-database tech-icon"></i>
+                    <div class="tech-name">SQL / MONGO</div>
+                    <div class="tech-level"><div class="tech-level-bar" data-level="75"></div></div>
+                </div>
+                <div class="tech-card">
+                    <i class="fas fa-code tech-icon"></i>
+                    <div class="tech-name">SCRIPTING</div>
+                    <div class="tech-level"><div class="tech-level-bar" data-level="85"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">Career.Timeline()</h2>
+            <div class="experience-grid">
+                <div class="exp-card">
+                    <div class="job-header">
+                        <div class="job-title">DevOps Engineer</div>
+                        <div class="company-info">Zen Exim Pvt. Ltd. • Ahmedabad, Gujarat</div>
+                        <div class="duration">June 2025 - Present</div>
+                    </div>
+                    <ul class="job-description">
+                        <li>Designed and managed Docker-based production environments for multi-container applications (PHP-NGINX, Node.js, MySQL, PostgreSQL, MongoDB)</li>
+                        <li>Built and maintained Jenkins CI/CD pipelines automating build and deployment with HTTP 4xx/5xx validation to block faulty releases</li>
+                        <li>Configured pipeline email notifications for start, success, and failure events, improving deployment visibility and response time</li>
+                        <li>Implemented NGINX reverse proxy and SSL/TLS termination to securely route traffic to backend services</li>
+                        <li>Deployed applications on AWS EC2 and implemented manual High Availability (HA) architecture</li>
+                        <li>Containerized and deployed services on Kubernetes (K3s/K8s) using Deployments, Services, ConfigMaps, and Secrets</li>
+                        <li>Monitored applications and infrastructure using Prometheus and Grafana</li>
+                    </ul>
+                </div>
+
+                <div class="exp-card">
+                    <div class="job-header">
+                        <div class="job-title">Jr. DevOps Engineer</div>
+                        <div class="company-info">Anblicks Inc • Ahmedabad, Gujarat</div>
+                        <div class="duration">April 2023 - June 2025</div>
+                    </div>
+                    <ul class="job-description">
+                        <li>Developed and deployed applications on AWS EKS using Docker, Git Registry, and Kubernetes manifests</li>
+                        <li>Implemented Infrastructure as Code using Terraform and automated deployments through Jenkins pipelines</li>
+                        <li>Reduced AWS cloud costs by 15% through regular cleanup activities and cost analysis optimization</li>
+                        <li>Implemented Blue-Green deployment strategy for RDS instances for seamless version upgrades</li>
+                        <li>Led 4 major quarterly releases, maintaining 99% SLA uptime</li>
+                        <li>Managed EKS cluster upgrades and vulnerability patch management</li>
+                        <li>Configured and maintained NMS for monitoring RDS connections, CPU utilization, and memory usage</li>
+                    </ul>
+                </div>
+
+                <div class="exp-card">
+                    <div class="job-header">
+                        <div class="job-title">Intern - Data Project</div>
+                        <div class="company-info">Anblicks Inc • Ahmedabad, Gujarat</div>
+                        <div class="duration">December 2022 - April 2023</div>
+                    </div>
+                    <ul class="job-description">
+                        <li>Created automated data pipelines using Azure Data Factory, Data Lake Gen2, and Blob Storage</li>
+                        <li>Implemented Data Flows, Triggers, Linked Services, and monitoring alerts with Logic Apps</li>
+                        <li>Automated end-to-end ingestion to dashboard workflow for sports data analytics</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">Skills.Execute()</h2>
+            <div class="skills-container">
+                <div class="skill-box">
+                    <h3>DevOps Tools</h3>
+                    <ul class="skill-list">
+                        <li>GitLab</li>
+                        <li>Docker</li>
+                        <li>Kubernetes</li>
+                        <li>Terraform</li>
+                        <li>Jenkins</li>
+                    </ul>
+                </div>
+                <div class="skill-box">
+                    <h3>Clouds OS</h3>
+                    <ul class="skill-list">
+                        <li>AWS (EKS, EC2, RDS)</li>
+                        <li>Azure</li>
+                        <li>Linux</li>
+                        <li>Windows</li>
+                    </ul>
+                </div>
+                <div class="skill-box">
+                    <h3>Database & Scripting</h3>
+                    <ul class="skill-list">
+                        <li>MySQL</li>
+                        <li>PostgreSQL</li>
+                        <li>MongoDB</li>
+                        <li>Shell</li>
+                        <li>Python</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">Certifications.Verify()</h2>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <i class="fab fa-aws cert-icon"></i>
+                    <div class="cert-name">AWS Solutions Architect</div>
+                    <div class="cert-details">Associate (SAA-003)</div>
+                    <div class="cert-issuer">Amazon Web Services</div>
+                </div>
+                <div class="cert-card">
+                    <i class="fab fa-microsoft cert-icon"></i>
+                    <div class="cert-name">Azure Fundamentals</div>
+                    <div class="cert-details">AZ-900</div>
+                    <div class="cert-issuer">Microsoft</div>
+                </div>
+                <div class="cert-card">
+                    <i class="fas fa-cube cert-icon"></i>
+                    <div class="cert-name">Terraform Associate</div>
+                    <div class="cert-details">003</div>
+                    <div class="cert-issuer">HashiCorp</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">Education.Loro()</h2>
+            <div class="edu-grid">
+                <div class="edu-card">
+                    <div class="edu-header">
+                        <div class="edu-title">B.Tech in Computer Engineering</div>
+                        <div class="edu-institution">Charotar University of Science and Technology</div>
+                        <div class="edu-duration">2020 - 2023</div>
+                        <div class="edu-cgpa">CGPA: 8.40/10</div>
+                    </div>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-header">
+                        <div class="edu-title">Diploma in Information Technology</div>
+                        <div class="edu-institution">Sir Bhavsinhji Polytechnic Institute</div>
+                        <div class="edu-duration">2017 - 2020</div>
+                        <div class="edu-cgpa">CGPA: 6.58/10</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p class="footer-text">© 2025 RONAK SAVANI</p>
+            <p class="footer-subtext">SYSTEM STATUS: <span class="footer-status">ONLINE</span></p>
+            <p class="footer-subtext">BUILT WITH PASSION FOR DEVOPS</p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll progress indicator
+        window.onscroll = function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("scrollProgress").style.width = scrolled + "%";
+        };
+
+        // Animate tech level bars on scroll
+        function animateTechLevels() {
+            const techLevelBars = document.querySelectorAll('.tech-level-bar');
+            techLevelBars.forEach(bar => {
+                const level = bar.getAttribute('data-level');
+                bar.style.width = level + '%';
+            });
+        }
+
+        // Initialize animations when page loads
+        window.addEventListener('load', () => {
+            animateTechLevels();
+        });
+
+        // Create floating particles
+        function createParticles() {
+            const particleContainer = document.createElement('div');
+            particleContainer.className = 'particle-container';
+            document.body.appendChild(particleContainer);
+
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                // Random position
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                
+                // Random size
+                const size = Math.random() * 3 + 1;
+                
+                // Random animation delay
+                const delay = Math.random() * 5;
+                
+                particle.style.left = `${posX}vw`;
+                particle.style.top = `${posY}vh`;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.animationDelay = `${delay}s`;
+                
+                particleContainer.appendChild(particle);
+            }
+        }
+
+        // Initialize particles
+        createParticles();
+    </script>
+</body>
+</html>
