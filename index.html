@@ -92,7 +92,7 @@
             }
         }
 
-        /* NEW: Tech Arsenal Logo Container */
+        /* Tech Arsenal Logo Container */
         .tech-arsenal-logo {
             display: flex;
             justify-content: center;
@@ -626,7 +626,7 @@
             }
         }
 
-        /* Tech Stack Grid - ENHANCED */
+        /* Tech Stack Grid */
         .tech-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -690,7 +690,7 @@
             padding: 0 5px;
         }
 
-        /* NEW: Tech Level Indicator */
+        /* Tech Level Indicator */
         .tech-level {
             height: 4px;
             background: rgba(0, 255, 255, 0.1);
@@ -1285,35 +1285,7 @@
             }
         }
 
-        /* NEW: Hacker Terminal Effect */
-        .terminal-effect {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 30px;
-            background: rgba(0, 0, 0, 0.9);
-            border-top: 1px solid #00ff88;
-            z-index: 100;
-            overflow: hidden;
-            display: none;
-        }
-
-        .terminal-text {
-            font-family: 'Courier New', monospace;
-            color: #00ff88;
-            padding: 8px;
-            font-size: 12px;
-            white-space: nowrap;
-            animation: terminalTyping 20s linear infinite;
-        }
-
-        @keyframes terminalTyping {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
-        }
-
-        /* NEW: Scroll Progress Indicator */
+        /* Scroll Progress Indicator */
         .scroll-progress {
             position: fixed;
             top: 0;
@@ -1345,7 +1317,6 @@
             width: 50px;
             height: 50px;
             border-radius: 5px;
-            display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.5em;
@@ -1486,7 +1457,7 @@
         <div class="container">
             <h2 class="section-title">Tech Arsenal</h2>
             
-            <!-- NEW: Tech Arsenal Logo -->
+            <!-- Tech Arsenal Logo -->
             <div class="tech-arsenal-logo">
                 <div class="logo-container">
                     <div class="logo-glow"></div>
@@ -1504,7 +1475,6 @@
             </div>
 
             <div class="tech-grid">
-                <!-- Only showing the specific 8 tech cards as requested -->
                 <div class="tech-card">
                     <i class="fab fa-docker tech-icon"></i>
                     <div class="tech-name">docker</div>
@@ -1692,7 +1662,7 @@
 
     <footer>
         <div class="container">
-            <p class="footer-text">© 2026 RONAK SAVANI</p>
+            <p class="footer-text">© 2025 RONAK SAVANI</p>
             <p class="footer-subtext">SYSTEM STATUS: <span class="footer-status">ONLINE</span></p>
             <p class="footer-subtext">BUILT WITH PASSION FOR DEVOPS</p>
         </div>
@@ -1816,6 +1786,20 @@
                 }
                 createParticles();
             }, 250);
+        });
+
+        // Clean up any stray LaTeX elements (in case browser extensions inject them)
+        document.addEventListener('DOMContentLoaded', function() {
+            // Remove any elements that contain LaTeX patterns
+            const elements = document.querySelectorAll('*');
+            elements.forEach(el => {
+                const text = el.textContent || '';
+                if (text.includes('\\[') || text.includes('\\]') || 
+                    text.includes('boxed') || text.includes('\\text') ||
+                    text.includes('\\boxed')) {
+                    el.remove();
+                }
+            });
         });
     </script>
 </body>
