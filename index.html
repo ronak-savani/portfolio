@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
@@ -60,7 +61,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: 
+            background-image:
                 linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
             background-size: 50px 50px;
@@ -69,8 +70,13 @@
         }
 
         @keyframes gridMove {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(50px, 50px); }
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(50px, 50px);
+            }
         }
 
         /* Floating particles - Reduce on mobile */
@@ -115,7 +121,7 @@
             background: radial-gradient(circle, rgba(0, 255, 255, 0.1) 0%, rgba(0, 255, 255, 0) 70%);
             border: 2px solid rgba(0, 255, 255, 0.5);
             box-shadow: 0 0 30px rgba(0, 255, 255, 0.3),
-                        inset 0 0 30px rgba(0, 255, 255, 0.1);
+                inset 0 0 30px rgba(0, 255, 255, 0.1);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -123,8 +129,13 @@
         }
 
         @keyframes rotateLogo {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         .logo-inner {
@@ -140,8 +151,13 @@
         }
 
         @keyframes pulseInner {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.1); }
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1.1);
+            }
         }
 
         .logo-icon {
@@ -202,8 +218,13 @@
         }
 
         @keyframes glowPulse {
-            0% { opacity: 0.3; }
-            100% { opacity: 0.7; }
+            0% {
+                opacity: 0.3;
+            }
+
+            100% {
+                opacity: 0.7;
+            }
         }
 
         /* Mobile logo adjustments */
@@ -324,15 +345,46 @@
             animation: float 15s infinite ease-in-out;
         }
 
-        .floating-icon:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
-        .floating-icon:nth-child(2) { top: 20%; right: 15%; animation-delay: 2s; }
-        .floating-icon:nth-child(3) { top: 60%; left: 20%; animation-delay: 4s; }
-        .floating-icon:nth-child(4) { top: 70%; right: 10%; animation-delay: 6s; }
-        .floating-icon:nth-child(5) { top: 40%; left: 50%; animation-delay: 8s; }
+        .floating-icon:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-icon:nth-child(2) {
+            top: 20%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .floating-icon:nth-child(3) {
+            top: 60%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        .floating-icon:nth-child(4) {
+            top: 70%;
+            right: 10%;
+            animation-delay: 6s;
+        }
+
+        .floating-icon:nth-child(5) {
+            top: 40%;
+            left: 50%;
+            animation-delay: 8s;
+        }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(5deg); }
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
         }
 
         /* Mobile adjustments for floating icons */
@@ -340,12 +392,31 @@
             .floating-icon {
                 font-size: 40px;
             }
-            
-            .floating-icon:nth-child(1) { top: 5%; left: 5%; }
-            .floating-icon:nth-child(2) { top: 15%; right: 5%; }
-            .floating-icon:nth-child(3) { top: 70%; left: 10%; }
-            .floating-icon:nth-child(4) { top: 80%; right: 5%; }
-            .floating-icon:nth-child(5) { top: 50%; left: 50%; }
+
+            .floating-icon:nth-child(1) {
+                top: 5%;
+                left: 5%;
+            }
+
+            .floating-icon:nth-child(2) {
+                top: 15%;
+                right: 5%;
+            }
+
+            .floating-icon:nth-child(3) {
+                top: 70%;
+                left: 10%;
+            }
+
+            .floating-icon:nth-child(4) {
+                top: 80%;
+                right: 5%;
+            }
+
+            .floating-icon:nth-child(5) {
+                top: 50%;
+                left: 50%;
+            }
         }
 
         .glitch {
@@ -367,11 +438,28 @@
         }
 
         @keyframes glitchAnimation {
-            0%, 90%, 100% { transform: translate(0); }
-            92% { transform: translate(-2px, 2px); }
-            94% { transform: translate(2px, -2px); }
-            96% { transform: translate(-2px, -2px); }
-            98% { transform: translate(2px, 2px); }
+
+            0%,
+            90%,
+            100% {
+                transform: translate(0);
+            }
+
+            92% {
+                transform: translate(-2px, 2px);
+            }
+
+            94% {
+                transform: translate(2px, -2px);
+            }
+
+            96% {
+                transform: translate(-2px, -2px);
+            }
+
+            98% {
+                transform: translate(2px, 2px);
+            }
         }
 
         /* Mobile glitch text */
@@ -427,7 +515,7 @@
                 letter-spacing: 0.5px;
                 padding: 0 5px;
             }
-            
+
             .cyber-tagline::before,
             .cyber-tagline::after {
                 margin: 0 3px;
@@ -482,7 +570,7 @@
             .contact-grid {
                 gap: 15px;
             }
-            
+
             .contact-btn {
                 padding: 10px 20px;
                 font-size: 0.9em;
@@ -495,14 +583,14 @@
             .contact-grid {
                 gap: 10px;
             }
-            
+
             .contact-btn {
                 padding: 8px 15px;
                 font-size: 0.85em;
                 min-width: 110px;
                 clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
             }
-            
+
             .contact-btn i {
                 font-size: 1em;
             }
@@ -558,7 +646,7 @@
                 margin-bottom: 30px;
                 letter-spacing: 2px;
             }
-            
+
             .section-title::after {
                 width: 80px;
                 margin: 15px auto 0;
@@ -572,7 +660,7 @@
                 letter-spacing: 1px;
                 padding: 0 5px;
             }
-            
+
             .section-title::after {
                 width: 60px;
                 height: 2px;
@@ -603,8 +691,13 @@
         }
 
         @keyframes scanline {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
         }
 
         /* Mobile summary box */
@@ -687,7 +780,10 @@
             letter-spacing: 1px;
             margin-bottom: 10px;
             word-break: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
             padding: 0 5px;
+            width: 100%;
         }
 
         /* NEW: Tech Level Indicator */
@@ -713,57 +809,88 @@
         /* Mobile tech grid */
         @media (max-width: 768px) {
             .tech-grid {
-                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-                gap: 15px;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 12px;
             }
-            
+
             .tech-card {
-                padding: 15px;
-                min-height: 140px;
+                padding: 15px 10px;
+                min-height: auto;
                 clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
             }
-            
+
             .tech-icon {
-                font-size: 2.2em;
-                margin-bottom: 12px;
+                font-size: 2em;
+                margin-bottom: 10px;
             }
-            
+
             .tech-name {
-                font-size: 0.9em;
+                font-family: 'Rajdhani', sans-serif;
+                font-size: 0.85em;
+                font-weight: 700;
+                letter-spacing: 0.5px;
             }
-            
+
             .tech-level {
                 margin-top: 8px;
                 max-width: 100px;
             }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 600px) {
             .tech-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 12px;
+                gap: 10px;
             }
-            
+
             .tech-card {
-                padding: 12px;
-                min-height: 120px;
+                padding: 15px 10px;
+                min-height: auto;
                 clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
             }
-            
+
             .tech-icon {
                 font-size: 1.8em;
                 margin-bottom: 10px;
             }
-            
+
             .tech-name {
-                font-size: 0.85em;
+                font-family: 'Rajdhani', sans-serif;
+                font-size: 0.9em;
+                font-weight: 700;
                 letter-spacing: 0.5px;
+                line-height: 1.3;
             }
-            
+
             .tech-level {
                 height: 3px;
                 margin-top: 8px;
                 max-width: 80px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .tech-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+
+            .tech-card {
+                padding: 12px 8px;
+                min-height: auto;
+            }
+
+            .tech-icon {
+                font-size: 1.5em;
+                margin-bottom: 8px;
+            }
+
+            .tech-name {
+                font-family: 'Rajdhani', sans-serif;
+                font-size: 0.8em;
+                font-weight: 700;
+                letter-spacing: 0px;
+                line-height: 1.3;
             }
         }
 
@@ -854,20 +981,20 @@
             .experience-grid {
                 gap: 20px;
             }
-            
+
             .exp-card {
                 padding: 20px;
                 border-left: 3px solid #00ffff;
             }
-            
+
             .job-title {
                 font-size: 1.2em;
             }
-            
+
             .company-info {
                 font-size: 0.95em;
             }
-            
+
             .job-description li {
                 padding-left: 22px;
                 margin-bottom: 8px;
@@ -880,29 +1007,29 @@
                 padding: 15px;
                 border-left: 2px solid #00ffff;
             }
-            
+
             .job-title {
                 font-size: 1.1em;
             }
-            
+
             .company-info {
                 font-size: 0.9em;
             }
-            
+
             .duration {
                 font-size: 0.85em;
             }
-            
+
             .job-description {
                 margin-top: 10px;
             }
-            
+
             .job-description li {
                 padding-left: 20px;
                 margin-bottom: 6px;
                 font-size: 0.9em;
             }
-            
+
             .job-description li::before {
                 font-size: 1.2em;
             }
@@ -956,17 +1083,17 @@
                 grid-template-columns: 1fr;
                 gap: 20px;
             }
-            
+
             .skill-box {
                 padding: 20px;
                 clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
             }
-            
+
             .skill-box h3 {
                 font-size: 1.1em;
                 margin-bottom: 12px;
             }
-            
+
             .skill-list li {
                 padding: 7px 0;
                 font-size: 0.95em;
@@ -978,12 +1105,12 @@
                 padding: 15px;
                 clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
             }
-            
+
             .skill-box h3 {
                 font-size: 1em;
                 letter-spacing: 0.5px;
             }
-            
+
             .skill-list li {
                 padding: 6px 0;
                 font-size: 0.9em;
@@ -1059,21 +1186,21 @@
                 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
                 gap: 20px;
             }
-            
+
             .cert-card {
                 padding: 25px;
                 clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
             }
-            
+
             .cert-icon {
                 font-size: 2.2em;
                 margin-bottom: 12px;
             }
-            
+
             .cert-name {
                 font-size: 1.1em;
             }
-            
+
             .cert-details {
                 font-size: 0.95em;
             }
@@ -1084,20 +1211,20 @@
                 grid-template-columns: 1fr;
                 gap: 15px;
             }
-            
+
             .cert-card {
                 padding: 20px;
                 clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
             }
-            
+
             .cert-icon {
                 font-size: 2em;
             }
-            
+
             .cert-name {
                 font-size: 1em;
             }
-            
+
             .cert-details {
                 font-size: 0.9em;
             }
@@ -1176,20 +1303,20 @@
             .edu-grid {
                 gap: 20px;
             }
-            
+
             .edu-card {
                 padding: 20px;
                 border-left: 3px solid #00ff88;
             }
-            
+
             .edu-title {
                 font-size: 1.2em;
             }
-            
+
             .edu-institution {
                 font-size: 1em;
             }
-            
+
             .edu-cgpa {
                 font-size: 0.95em;
             }
@@ -1200,19 +1327,19 @@
                 padding: 15px;
                 border-left: 2px solid #00ff88;
             }
-            
+
             .edu-title {
                 font-size: 1.1em;
             }
-            
+
             .edu-institution {
                 font-size: 0.95em;
             }
-            
+
             .edu-duration {
                 font-size: 0.85em;
             }
-            
+
             .edu-cgpa {
                 font-size: 0.9em;
             }
@@ -1259,11 +1386,11 @@
                 padding: 25px 0;
                 margin-top: 50px;
             }
-            
+
             .footer-text {
                 font-size: 0.85em;
             }
-            
+
             .footer-subtext {
                 font-size: 0.8em;
             }
@@ -1274,12 +1401,12 @@
                 padding: 20px 0;
                 margin-top: 40px;
             }
-            
+
             .footer-text {
                 font-size: 0.8em;
                 letter-spacing: 0.5px;
             }
-            
+
             .footer-subtext {
                 font-size: 0.75em;
             }
@@ -1309,8 +1436,13 @@
         }
 
         @keyframes terminalTyping {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
         }
 
         /* NEW: Scroll Progress Indicator */
@@ -1388,19 +1520,35 @@
         }
 
         /* Prevent horizontal overflow */
-        img, video, canvas {
+        img,
+        video,
+        canvas {
             max-width: 100%;
             height: auto;
         }
 
         /* Text wrapping improvements */
-        h1, h2, h3, h4, h5, h6, p, li, a {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        li,
+        a {
             word-wrap: break-word;
             overflow-wrap: break-word;
         }
 
         /* Touch-friendly buttons */
-        button, a, input, .tech-card, .exp-card, .cert-card, .edu-card {
+        button,
+        a,
+        input,
+        .tech-card,
+        .exp-card,
+        .cert-card,
+        .edu-card {
             -webkit-tap-highlight-color: transparent;
             touch-action: manipulation;
         }
@@ -1419,15 +1567,15 @@
             header {
                 padding: 40px 0 30px;
             }
-            
+
             section {
                 padding: 30px 0;
             }
-            
+
             .glitch {
                 font-size: 2em;
             }
-            
+
             .cyber-tagline {
                 font-size: 1em;
                 margin-bottom: 20px;
@@ -1435,6 +1583,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="animated-bg"></div>
     <div class="grid-overlay"></div>
@@ -1477,7 +1626,9 @@
         <div class="container">
             <h2 class="section-title">System.Initialize()</h2>
             <div class="cyber-box">
-                Results-driven DevOps Engineer with expertise in cloud infrastructure, containerization, and CI/CD automation. Proficient in AWS, Kubernetes, Docker, and Terraform for building scalable and reliable deployment pipelines.
+                Results-driven DevOps Engineer with expertise in cloud infrastructure, containerization, and CI/CD
+                automation. Proficient in AWS, Kubernetes, Docker, and Terraform for building scalable and reliable
+                deployment pipelines.
             </div>
         </div>
     </section>
@@ -1485,7 +1636,7 @@
     <section>
         <div class="container">
             <h2 class="section-title">Tech Arsenal</h2>
-            
+
             <!-- NEW: Tech Arsenal Logo -->
             <div class="tech-arsenal-logo">
                 <div class="logo-container">
@@ -1508,42 +1659,58 @@
                 <div class="tech-card">
                     <i class="fab fa-docker tech-icon"></i>
                     <div class="tech-name">docker</div>
-                    <div class="tech-level"><div class="tech-level-bar" data-level="95"></div></div>
+                    <div class="tech-level">
+                        <div class="tech-level-bar" data-level="95"></div>
+                    </div>
                 </div>
                 <div class="tech-card">
                     <i class="fas fa-dharmachakra tech-icon"></i>
                     <div class="tech-name">kubernetes</div>
-                    <div class="tech-level"><div class="tech-level-bar" data-level="90"></div></div>
+                    <div class="tech-level">
+                        <div class="tech-level-bar" data-level="90"></div>
+                    </div>
                 </div>
                 <div class="tech-card">
                     <i class="fas fa-cube tech-icon"></i>
                     <div class="tech-name">terraform</div>
-                    <div class="tech-level"><div class="tech-level-bar" data-level="85"></div></div>
+                    <div class="tech-level">
+                        <div class="tech-level-bar" data-level="85"></div>
+                    </div>
                 </div>
                 <div class="tech-card">
                     <i class="fab fa-aws tech-icon"></i>
                     <div class="tech-name">aws</div>
-                    <div class="tech-level"><div class="tech-level-bar" data-level="92"></div></div>
+                    <div class="tech-level">
+                        <div class="tech-level-bar" data-level="92"></div>
+                    </div>
                 </div>
                 <div class="tech-card">
                     <i class="fab fa-jenkins tech-icon"></i>
                     <div class="tech-name">jenkins</div>
-                    <div class="tech-level"><div class="tech-level-bar" data-level="88"></div></div>
+                    <div class="tech-level">
+                        <div class="tech-level-bar" data-level="88"></div>
+                    </div>
                 </div>
                 <div class="tech-card">
                     <i class="fab fa-microsoft tech-icon"></i>
                     <div class="tech-name">azure</div>
-                    <div class="tech-level"><div class="tech-level-bar" data-level="80"></div></div>
+                    <div class="tech-level">
+                        <div class="tech-level-bar" data-level="80"></div>
+                    </div>
                 </div>
                 <div class="tech-card">
                     <i class="fas fa-database tech-icon"></i>
                     <div class="tech-name">SQL / MONGO</div>
-                    <div class="tech-level"><div class="tech-level-bar" data-level="75"></div></div>
+                    <div class="tech-level">
+                        <div class="tech-level-bar" data-level="75"></div>
+                    </div>
                 </div>
                 <div class="tech-card">
                     <i class="fas fa-code tech-icon"></i>
                     <div class="tech-name">SCRIPTING</div>
-                    <div class="tech-level"><div class="tech-level-bar" data-level="85"></div></div>
+                    <div class="tech-level">
+                        <div class="tech-level-bar" data-level="85"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1560,12 +1727,18 @@
                         <div class="duration">June 2025 - Present</div>
                     </div>
                     <ul class="job-description">
-                        <li>Designed and managed Docker-based production environments for multi-container applications (PHP-NGINX, Node.js, MySQL, PostgreSQL, MongoDB)</li>
-                        <li>Built and maintained Jenkins CI/CD pipelines automating build and deployment with HTTP 4xx/5xx validation to block faulty releases</li>
-                        <li>Configured pipeline email notifications for start, success, and failure events, improving deployment visibility and response time</li>
-                        <li>Implemented NGINX reverse proxy and SSL/TLS termination to securely route traffic to backend services</li>
-                        <li>Deployed applications on AWS EC2 and implemented manual High Availability (HA) architecture</li>
-                        <li>Containerized and deployed services on Kubernetes (K3s/K8s) using Deployments, Services, ConfigMaps, and Secrets</li>
+                        <li>Designed and managed Docker-based production environments for multi-container applications
+                            (PHP-NGINX, Node.js, MySQL, PostgreSQL, MongoDB)</li>
+                        <li>Built and maintained Jenkins CI/CD pipelines automating build and deployment with HTTP
+                            4xx/5xx validation to block faulty releases</li>
+                        <li>Configured pipeline email notifications for start, success, and failure events, improving
+                            deployment visibility and response time</li>
+                        <li>Implemented NGINX reverse proxy and SSL/TLS termination to securely route traffic to backend
+                            services</li>
+                        <li>Deployed applications on AWS EC2 and implemented manual High Availability (HA) architecture
+                        </li>
+                        <li>Containerized and deployed services on Kubernetes (K3s/K8s) using Deployments, Services,
+                            ConfigMaps, and Secrets</li>
                         <li>Monitored applications and infrastructure using Prometheus and Grafana</li>
                     </ul>
                 </div>
@@ -1577,13 +1750,18 @@
                         <div class="duration">April 2023 - June 2025</div>
                     </div>
                     <ul class="job-description">
-                        <li>Developed and deployed applications on AWS EKS using Docker, Git Registry, and Kubernetes manifests</li>
-                        <li>Implemented Infrastructure as Code using Terraform and automated deployments through Jenkins pipelines</li>
-                        <li>Reduced AWS cloud costs by 15% through regular cleanup activities and cost analysis optimization</li>
-                        <li>Implemented Blue-Green deployment strategy for RDS instances for seamless version upgrades</li>
+                        <li>Developed and deployed applications on AWS EKS using Docker, Git Registry, and Kubernetes
+                            manifests</li>
+                        <li>Implemented Infrastructure as Code using Terraform and automated deployments through Jenkins
+                            pipelines</li>
+                        <li>Reduced AWS cloud costs by 15% through regular cleanup activities and cost analysis
+                            optimization</li>
+                        <li>Implemented Blue-Green deployment strategy for RDS instances for seamless version upgrades
+                        </li>
                         <li>Led 4 major quarterly releases, maintaining 99% SLA uptime</li>
                         <li>Managed EKS cluster upgrades and vulnerability patch management</li>
-                        <li>Configured and maintained NMS for monitoring RDS connections, CPU utilization, and memory usage</li>
+                        <li>Configured and maintained NMS for monitoring RDS connections, CPU utilization, and memory
+                            usage</li>
                     </ul>
                 </div>
 
@@ -1594,8 +1772,10 @@
                         <div class="duration">December 2022 - April 2023</div>
                     </div>
                     <ul class="job-description">
-                        <li>Created automated data pipelines using Azure Data Factory, Data Lake Gen2, and Blob Storage</li>
-                        <li>Implemented Data Flows, Triggers, Linked Services, and monitoring alerts with Logic Apps</li>
+                        <li>Created automated data pipelines using Azure Data Factory, Data Lake Gen2, and Blob Storage
+                        </li>
+                        <li>Implemented Data Flows, Triggers, Linked Services, and monitoring alerts with Logic Apps
+                        </li>
                         <li>Automated end-to-end ingestion to dashboard workflow for sports data analytics</li>
                     </ul>
                 </div>
@@ -1740,25 +1920,25 @@
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
                 particle.className = 'particle';
-                
+
                 // Random position
                 const posX = Math.random() * 100;
                 const posY = Math.random() * 100;
-                
+
                 // Random size - smaller on mobile
-                const size = window.innerWidth < 768 ? 
-                    Math.random() * 1.5 + 0.5 : 
+                const size = window.innerWidth < 768 ?
+                    Math.random() * 1.5 + 0.5 :
                     Math.random() * 3 + 1;
-                
+
                 // Random animation delay
                 const delay = Math.random() * 5;
-                
+
                 particle.style.left = `${posX}vw`;
                 particle.style.top = `${posY}vh`;
                 particle.style.width = `${size}px`;
                 particle.style.height = `${size}px`;
                 particle.style.animationDelay = `${delay}s`;
-                
+
                 particleContainer.appendChild(particle);
             }
         }
@@ -1777,14 +1957,14 @@
         // Initialize everything
         document.addEventListener('DOMContentLoaded', () => {
             createParticles();
-            
+
             // Add smooth scroll for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
                     const targetId = this.getAttribute('href');
                     if (targetId === '#') return;
-                    
+
                     const targetElement = document.querySelector(targetId);
                     if (targetElement) {
                         window.scrollTo({
@@ -1819,4 +1999,5 @@
         });
     </script>
 </body>
+
 </html>
